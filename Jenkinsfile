@@ -1,9 +1,14 @@
 pipeline{
   agent any
   stages{
-    stage('From SCM'){
+    stage('Checkout'){
       steps {
-        echo 'hello from SCM'
+        checkout scm
+      }
+    }
+    stage('Build'){
+      steps{
+        bat 'python test.py'
       }
     }
   }
