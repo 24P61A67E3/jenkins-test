@@ -1,15 +1,11 @@
-pipeline{
-  agent any
-  stages{
-    stage('Checkout'){
-      steps {
-        checkout scm
-      }
+pipeline {
+    agent any
+
+    stages {
+        stage('Run Python') {
+            steps {
+                bat '"C:\\Users\\Dell\\AppData\\Local\\Python\\bin\\python.exe" test.py'
+            }
+        }
     }
-    stage('Build'){
-      steps{
-        bat 'python test.py'
-      }
-    }
-  }
 }
