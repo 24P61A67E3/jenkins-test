@@ -2,21 +2,15 @@ pipeline {
     agent any
 
     stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
         stage('Build') {
             steps {
-                echo 'Build started'
-            }
-        }
-
-        stage('Run Python') {
-            steps {
-                bat '"C:\\Users\\Dell\\AppData\\Local\\Python\\bin\\python.exe" test.py'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                echo 'Testing completed'
+                bat 'python test.py'
             }
         }
     }
