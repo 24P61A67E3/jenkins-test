@@ -10,7 +10,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'py test.py'
+                bat '"C:\Users\Dell\Downloads\Python 3.13 Installer.exe"'
             }
         }
     }
